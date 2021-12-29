@@ -1,0 +1,35 @@
+{
+  "name": "url-shortener",
+  "version": "0.0.1",
+  "description": "A service for url shortening",
+  "license": "MIT",
+  "author": "Emma Chung <emma2334+github.url-shortener@gmail.com> (http://emma2334.github.io)",
+  "homepage": ".",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emma2334/url-shortener.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emma2334/url-shortener/issues"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.4",
+    "prettier": "^2.5.1",
+    "prettier-package-json": "^2.6.0",
+    "typescript": "^4.5.4"
+  },
+  "keywords": ["url shortener"]
+}
