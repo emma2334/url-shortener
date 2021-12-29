@@ -1,0 +1,28 @@
+{
+  "name": "client",
+  "version": "0.0.1",
+  "description": "The client of url shortener",
+  "scripts": {},
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-redux": "^7.1.21"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
