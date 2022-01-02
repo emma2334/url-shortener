@@ -10,11 +10,11 @@ export const sequelize = new Sequelize(
 )
 
 interface UrlInstance extends Model {
-  url: string
+  url: string;
 }
 
 export const URL = sequelize.define<UrlInstance>('urls', {
-  url: DataTypes.STRING,
+  url: { type: DataTypes.STRING, allowNull: false }
 })
 
 sequelize.sync({ alter: true })
