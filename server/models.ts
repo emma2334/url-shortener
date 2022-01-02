@@ -10,6 +10,7 @@ export const sequelize = new Sequelize(
 )
 
 interface UrlInstance extends Model {
+  id: number;
   url: string;
 }
 
