@@ -12,6 +12,7 @@ export const sequelize = new Sequelize(
 interface UrlInstance extends Model {
   id: number;
   url: string;
+  view: number;
   ogTitle?: string;
   ogType?: string;
   ogImage?: string;
@@ -22,6 +23,10 @@ interface UrlInstance extends Model {
 
 export const URL = sequelize.define<UrlInstance>('urls', {
   url: { type: DataTypes.STRING, allowNull: false },
+  view: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0
+  },
   ogTitle: DataTypes.STRING,
   ogType: DataTypes.STRING,
   ogImage: DataTypes.STRING,

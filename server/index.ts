@@ -22,17 +22,17 @@ app.route('/api/url').post(async (req, res) => {
 })
 
 app.route('/:id').get(async (req, res) => {
-  const target = await URL.findOne({ id: req.params.id })
-  target.code === 1004 && target.result
+  const target = await URL.view(req.params.id)
+  target.code === 1008 && target.data
     ? res.status(200).render('template', {
-      id: target.result.id,
-      url: target.result.url,
-      ogTitle: target.result.ogTitle,
-      ogType: target.result.ogType,
-      ogImage: target.result.ogImage,
-      ogUrl: target.result.ogUrl,
-      ogDescription: target.result.ogDescription,
-      favicon: target.result.favicon
+      id: target.data.id,
+      url: target.data.url,
+      ogTitle: target.data.ogTitle,
+      ogType: target.data.ogType,
+      ogImage: target.data.ogImage,
+      ogUrl: target.data.ogUrl,
+      ogDescription: target.data.ogDescription,
+      favicon: target.data.favicon
     })
     : res.status(404).render('404')
 })
