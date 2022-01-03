@@ -33,10 +33,42 @@ async function create (url: string): Promise<Result> {
 }
 
 /**
+ * Find all urls that match the query
+ *
+ * @param      {object}           query   The query
+ * @return     {Promise<Result>}  The object of result info
+ */
+async function find (query: object = {}): Promise<Result> {
+  try {
+    return status(code.SHORTEN_URL.FIND_SUCCESS, {
+      result: await URL.findAll({ where: query })
+    })
+  } catch (e) {
+    return status(code.SHORTEN_URL.FIND_FAIL, { error: e })
+  }
+}
+
+/**
+ * Finds the first url that matches the query
+ *
+ * @param      {object}           query   The query
+ * @return     {Promise<Result>}  The object of result info
+ */
+async function findOne (query: object): Promise<Result> {
+  try {
+    return status(code.SHORTEN_URL.FIND_SUCCESS, {
+      result: await URL.findOne({ where: query })
+    })
+  } catch (e) {
+    return status(code.SHORTEN_URL.FIND_FAIL, { error: e })
+  }
+}
+
+/**
  * Get open graph metadata.
  *
  * @param      {string}           url     The url
- * @return     {Promise<Result>}  The open graph metadata.
+ * @return     {Promise<Result>}  The result of requesting open graph metadata.
  */
 async function getMetadata (url: string): Promise<Result> {
   const og = await ogs({ url })
@@ -53,4 +85,4 @@ async function getMetadata (url: string): Promise<Result> {
   })
 }
 
-export default { create }
+export default { create, find, findOne }

@@ -1,7 +1,21 @@
 html
   head
     title= "Redirectiing..."
+    link(rel="icon" href=favicon)
+
+    meta(property="og:title" content=ogTitle)
+    meta(property="og:description" content=ogDescription)
+    meta(property="og:type" content=ogType)
+    meta(property="og:url" content=ogUrl)
+    meta(property="og:image" content=ogImage)
+
+    meta(property="twitter:card" content="summary")
+    meta(property="twitter:title" content=ogTitle)
+    meta(property="twitter:description" content=ogDescription)
+    meta(property="twitter:image" content=ogImage)
+
     script.
       document.location.replace('#{url}')
+
   body
     p The page is redirecting to #{url} ...
