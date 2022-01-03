@@ -12,10 +12,22 @@ export const sequelize = new Sequelize(
 interface UrlInstance extends Model {
   id: number;
   url: string;
+  ogTitle?: string;
+  ogType?: string;
+  ogImage?: string;
+  ogUrl?: string;
+  ogDescription?: string;
+  favicon?: string;
 }
 
 export const URL = sequelize.define<UrlInstance>('urls', {
-  url: { type: DataTypes.STRING, allowNull: false }
+  url: { type: DataTypes.STRING, allowNull: false },
+  ogTitle: DataTypes.STRING,
+  ogType: DataTypes.STRING,
+  ogImage: DataTypes.STRING,
+  ogUrl: DataTypes.STRING,
+  ogDescription: DataTypes.TEXT,
+  favicon: DataTypes.STRING
 })
 
 sequelize.sync({ alter: true })
