@@ -40,7 +40,11 @@ class Status {
 
 const SHORTEN_URL = {
   CREATE_SUCCESS: new Status('建立縮網址成功', 1000),
-  CREATE_FAIL: new Status('建立縮網址失敗', 1001)
+  CREATE_FAIL: new Status('建立縮網址失敗', 1001),
+  GET_METADATA_SUCCESS: new Status('獲取 Open Graph Metadata 成功', 1002),
+  GET_METADATA_FAIL: new Status('獲取 Open Graph Metadata 失敗', 1003),
+  FIND_SUCCESS: new Status('查找縮網址成功', 1004),
+  FIND_FAIL: new Status('查找縮網址失敗', 1005)
 }
 
 export const code = { SHORTEN_URL }
