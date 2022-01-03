@@ -24,7 +24,7 @@ app.route('/api/url').post(async (req, res) => {
 app.route('/:id').get(async (req, res) => {
   const target = await URL.findOne({ id: req.params.id })
   target.code === 1004 && target.result
-    ? res.status(301).render('template', {
+    ? res.status(200).render('template', {
       id: target.result.id,
       url: target.result.url,
       ogTitle: target.result.ogTitle,
