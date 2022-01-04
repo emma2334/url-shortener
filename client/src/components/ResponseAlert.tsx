@@ -8,14 +8,26 @@ const type: { [name: string]: 'success' | 'error' | 'warning' } = {
 }
 
 interface PropsType {
-  msg: string;
-  detail: string;
   status: 'successed' | 'failed' | 'unknown';
+  msg: string;
+  detail?: string;
+  error?: object;
 }
 
-const ResponseAlert = ({ msg, detail, status }: PropsType) => {
+const ResponseAlert = ({ msg, detail, status, error }: PropsType) => {
   return (
-    <Alert message={msg} description={detail} type={type[status]} showIcon />
+    <Alert
+      style={{ marginBottom: '16px' }}
+      message={msg}
+      description={
+        <>
+          {detail && <span>{detail}</span>}
+          {error && <span>{JSON.stringify(error)}</span>}
+        </>
+      }
+      type={type[status]}
+      showIcon
+    />
   )
 }
 
