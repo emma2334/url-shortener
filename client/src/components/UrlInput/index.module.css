@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.form .formItem {
+  margin-right: 0;
+}
+
+.form .input {
+  flex: 1;
+}
