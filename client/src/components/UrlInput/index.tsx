@@ -24,11 +24,16 @@ const UrlInput = ({ onFinish, buttonDisabled }: PropsType) => {
           }
         ]}
       >
-        <Input placeholder="網址" />
+        <Input size="large" placeholder="網址" allowClear />
       </Form.Item>
       <Form.Item className={style.formItem}>
-        <Button type="primary" htmlType="submit" disabled={buttonDisabled}>
-          Submit
+        <Button
+          type="primary"
+          size="large"
+          htmlType="submit"
+          disabled={buttonDisabled}
+        >
+          建立縮網址
         </Button>
       </Form.Item>
     </Form>

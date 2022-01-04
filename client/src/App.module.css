@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout .header {
+  padding: 0;
+}
+
+.layout .title {
+  display: inline-flex;
+  align-items: center;
+  float: left;
+  margin-right: 24px;
+  margin-bottom: 0;
+  height: 100%;
+  color: #fff;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.layout .content {
+  flex: 1;
+}
+
+.layout .content .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
