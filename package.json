@@ -18,7 +18,7 @@
     "build:server": "cd server && tsc --project ./tsconfig.json",
     "prepare": "husky install",
     "start": "concurrently \"yarn start:server\" \"yarn start:client\"",
-    "start:client": "cd client && react-scripts start",
+    "start:client": "cd client && yarn start",
     "start:server": "cd server && yarn start"
   },
   "devDependencies": {
