@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import { Form, Input, Button } from 'antd'
 import { post } from 'utils/api'
 import ResponseAlert from 'components/ResponseAlert'
+import UrlInfo from 'components/UrlInfo'
 
 const Home = () => {
   const [urlInfo, setUrlInfo] = useState<any>({})
+  const [loading, setLoading] = useState(false)
   const onFinish = async ({ url }: { url: string }) => {
-    url &&
-      post('/api/url', { url }).then((res) => {
-        setUrlInfo(res)
-        console.log(res)
-      })
+    setLoading(true)
+    post('/api/url', { url }).then((res) => {
+      setLoading(false)
+      setUrlInfo(res)
+      console.log(res)
+    })
   }
 
   return (
@@ -30,12 +33,15 @@ const Home = () => {
           <Input placeholder="網址" />
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" disabled={loading}>
             Submit
           </Button>
         </Form.Item>
       </Form>
-      {urlInfo.code && <ResponseAlert {...urlInfo} />}
+      {!loading && urlInfo.code && <ResponseAlert {...urlInfo} />}
+      {(loading || urlInfo.data) && (
+        <UrlInfo loading={loading} data={urlInfo.data} />
+      )}
     </>
   )
 }
