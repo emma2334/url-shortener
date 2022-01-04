@@ -13,7 +13,12 @@ const UrlInfo = ({ loading, data }: PropsType) => {
       {
         <Skeleton loading={loading} active>
           {data && (
-            <Descriptions title="網址訊息" bordered column={1}>
+            <Descriptions
+              title="網址訊息"
+              bordered
+              column={1}
+              contentStyle={{ background: '#fff' }}
+            >
               <Item label="">{data.id}</Item>
               <Item label="原網址">
                 <a href={data.url}>{data.url}</a>
