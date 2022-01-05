@@ -28,6 +28,29 @@ yarn build:client   # Build only client
 yarn build:server   # Build only server
 ```
 
+## Structure
+
+```
+.
+├── server/
+│   ├── features/  # logic
+│   ├── views/  # html templates
+│   ├── .env.example  # example for .env
+│   ├── index.ts  # app entry point
+│   ├── model.ts  # db models
+│   └── status.ts  # response state code
+├── client/
+│   ├── public/  # static files
+│   ├── src/  # Next.js source code
+│   │   ├── components/   # presentational cpmponents
+│   │   ├── pages/  # page components
+│   │   └── utils/  # tools
+│   ├── App.tsx
+│   └── index.tsx
+├── .eslintrc.json  # eslint config
+├── .lintstagedrc.json  # lintstage config
+```
+
 ## Deploy to Heroku ❌
 
 The project isn't ready to be deployed to Heroku. This section is for note only.
@@ -36,7 +59,8 @@ The project isn't ready to be deployed to Heroku. This section is for note only.
 
 ```bash
 heroku login
-heroku create --buildpack mars/create-react-app
+heroku create $APP_NAME --buildpack mars/create-react-app # create new app
+heroku addons:create heroku-postgresql:hobby-dev # create database
 heroku config:set JS_RUNTIME_TARGET_BUNDLE="/app/server/dist/**.js"
 
 heroku logs --tail # To track the log
