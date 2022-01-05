@@ -1,24 +1,24 @@
 {
-  "name": "url-shortener-server",
-  "version": "0.0.1",
+  "name": "server",
+  "version": "1.0.0",
   "description": "The server of url shortener",
   "scripts": {
     "start": "nodemon index.ts"
   },
   "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.5",
+    "@types/pg": "^8.6.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
+    "nodemon": "^2.0.15",
     "open-graph-scraper": "^4.11.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
     "pug": "^3.0.2",
     "sequelize": "^6.12.4",
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
-    "@types/node": "^17.0.5",
-    "@types/pg": "^8.6.3",
-    "nodemon": "^2.0.15",
     "ts-node": "^10.4.0"
   }
 }

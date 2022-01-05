@@ -11,11 +11,11 @@ Input a url and the service will gernate a shorten url which includes a redirect
 ### Develop
 
 1. Run `yarn` to install packages.
-2. Setup database config, checkout the example: [.env.example](https://github.com/emma2334/url-shortener/raw/master/server/.env.example)
-3. Run `yarn start`
+2. `vim server/.env` to setup database config, checkout the example: [.env.example](https://github.com/emma2334/url-shortener/raw/master/server/.env.example)
+3. Run `yarn start:dev`
 
 ```
-yarn start          # Run both client and server
+yarn start          # Run both client and server script below
 yarn start:client   # Run client at port 3000
 yarn start:server   # Run server at port 3001
 ```
@@ -51,17 +51,15 @@ yarn build:server   # Build only server
 ├── .lintstagedrc.json  # lintstage config
 ```
 
-## Deploy to Heroku ❌
+## Deploy to Heroku
 
-The project isn't ready to be deployed to Heroku. This section is for note only.
-
-### Deploy through [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+### Through [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 ```bash
 heroku login
-heroku create $APP_NAME --buildpack mars/create-react-app # create new app
+heroku create $APP_NAME # create new app
 heroku addons:create heroku-postgresql:hobby-dev # create database
-heroku config:set JS_RUNTIME_TARGET_BUNDLE="/app/server/dist/**.js"
+git push heroku master
 
 heroku logs --tail # To track the log
 heroku open # Open in browser
