@@ -41,3 +41,7 @@ heroku config:set JS_RUNTIME_TARGET_BUNDLE="/app/client/build/static/js/*.js"
 
 heroku logs --tail # To track the log
 ```
+
+## License
+
+This project is [MIT licensed](./LICENSE).
