@@ -1,10 +1,11 @@
 import React from 'react'
-import { Skeleton, Descriptions, Avatar, Image } from 'antd'
+import { Skeleton, Descriptions, Typography, Avatar, Image } from 'antd'
+import { absoluteUrl } from 'utils/api'
 const { Item } = Descriptions
 
 interface PropsType {
   loading: boolean;
-  data: { [name: string]: any };
+  data: { [key: string]: any };
 }
 
 const UrlInfo = ({ loading, data }: PropsType) => {
@@ -19,7 +20,11 @@ const UrlInfo = ({ loading, data }: PropsType) => {
               column={1}
               contentStyle={{ background: '#fff' }}
             >
-              <Item label="">{data.id}</Item>
+              <Item label="縮網址">
+                <Typography.Paragraph copyable>
+                  {absoluteUrl(data.id)}
+                </Typography.Paragraph>
+              </Item>
               <Item label="原網址">
                 <a href={data.url}>{data.url}</a>
               </Item>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { post } from 'utils/api'
+import api from 'utils/api'
 import ResponseAlert from 'components/ResponseAlert'
 import UrlInput from 'components/UrlInput'
 import UrlInfo from 'components/UrlInfo'
@@ -9,7 +9,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false)
   const onFinish = ({ url }: { url: string }) => {
     setLoading(true)
-    post('/api/url', { url }).then((res) => {
+    api.post('/api/url', { url }).then((res) => {
       setLoading(false)
       setUrlInfo(res)
       console.log(res)
