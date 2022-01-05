@@ -9,17 +9,23 @@ const Home = () => {
   const [loading, setLoading] = useState(false)
   const onFinish = ({ url }: { url: string }) => {
     setLoading(true)
-    api.post('/api/url', { url }).then((res) => {
-      setLoading(false)
-      setUrlInfo(res)
-      console.log(res)
-    })
+    api
+      .post('/api/url', { url })
+      .then((res) => {
+        setLoading(false)
+        setUrlInfo(res)
+        console.log(res)
+      })
+      .catch((e) => {
+        setUrlInfo({ status: 'unknown', msg: '似乎出了點問題' })
+        setLoading(false)
+      })
   }
 
   return (
     <>
       <UrlInput onFinish={onFinish} buttonDisabled={loading} />
-      {!loading && urlInfo.code && <ResponseAlert {...urlInfo} />}
+      {!loading && urlInfo.status && <ResponseAlert {...urlInfo} />}
       {(loading || urlInfo.data) && (
         <UrlInfo loading={loading} data={urlInfo.data} />
       )}
