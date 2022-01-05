@@ -16,6 +16,7 @@
     "build": "concurrently \"yarn build:server\" \"yarn build:client\"",
     "build:client": "cd client && yarn build",
     "build:server": "cd server && tsc --project ./tsconfig.json",
+    "postinstall": "yarn --cwd client && yarn --cwd server",
     "prepare": "husky install",
     "start": "concurrently \"yarn start:server\" \"yarn start:client\"",
     "start:client": "cd client && yarn start",
