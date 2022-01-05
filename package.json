@@ -22,7 +22,7 @@
     "start:client": "cd client && yarn start",
     "start:server": "cd server && yarn start"
   },
-  "devDependencies": {
+  "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "concurrently": "^6.5.1",
