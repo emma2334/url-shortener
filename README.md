@@ -37,9 +37,10 @@ The project isn't ready to be deployed to Heroku. This section is for note only.
 ```bash
 heroku login
 heroku create --buildpack mars/create-react-app
-heroku config:set JS_RUNTIME_TARGET_BUNDLE="/app/client/build/static/js/*.js"
+heroku config:set JS_RUNTIME_TARGET_BUNDLE="/app/server/dist/**.js"
 
 heroku logs --tail # To track the log
+heroku open # Open in browser
 ```
 
 ## License
