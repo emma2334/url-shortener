@@ -18,8 +18,9 @@
     "build:server": "cd server && tsc --project ./tsconfig.json",
     "postinstall": "yarn --cwd client && yarn --cwd server",
     "prepare": "husky install",
-    "start": "concurrently \"yarn start:server\" \"yarn start:client\"",
+    "start": "yarn start:server",
     "start:client": "cd client && yarn start",
+    "start:dev": "concurrently \"yarn start:server\" \"yarn start:client\"",
     "start:server": "cd server && yarn start"
   },
   "dependencies": {
