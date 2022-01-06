@@ -8,10 +8,15 @@ import status, { code, Result } from '../status'
  * Create shorten link
  *
  * @param      {string}           url     The url
+ * @param      {string}           [host]  Reject to create url from the specific host
  * @return     {Promise<Result>}  The object of result info
  */
-async function create (url: string): Promise<Result> {
+async function create (url: string, host?: string): Promise<Result> {
   try {
+    if (host && url.includes(`://${host}`)) {
+      return status(code.SHORTEN_URL.REJECT_URLS_HOST_BY_THE_SERVICE)
+    }
+
     const target = await URL.findOne({ where: { url } })
     if (target) {
       // Return target if exists

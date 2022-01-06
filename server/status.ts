@@ -58,7 +58,12 @@ const SHORTEN_URL = {
   UPDATE_SUCCESS: new Status('更新縮網址內容成功', 1006, true),
   UPDATE_FAIL: new Status('更新縮網址內容失敗', 1007, false),
   UPDATE_VIEW_COUNT_SUCCESS: new Status('更新瀏覽次數成功', 1008, true),
-  UPDATE_VIEW_COUNT_FAIL: new Status('更新瀏覽次數失敗', 1009, false)
+  UPDATE_VIEW_COUNT_FAIL: new Status('更新瀏覽次數失敗', 1009, false),
+  REJECT_URLS_HOST_BY_THE_SERVICE: new Status(
+    '拒絕和服務相同網域之網址',
+    1010,
+    false
+  )
 }
 
 export const code = { SHORTEN_URL }
