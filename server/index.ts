@@ -21,7 +21,7 @@ app.route('/api/urls').get(async (req, res) => {
 
 app.route('/api/url').post(async (req, res) => {
   const result = await URL.create(req.body.url, req.headers.host)
-  res.status(result.code === 1000 ? 201 : 200).json(result)
+  res.status(result.status === 'successed' ? 200 : 400).json(result)
 })
 
 app.route('/:id').get(async (req, res) => {
